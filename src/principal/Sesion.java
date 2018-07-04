@@ -50,7 +50,7 @@ public final class Sesion extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Bienvenido", "Acceso válido", JOptionPane.INFORMATION_MESSAGE);
                 Inicio jF_inicio = new Inicio();
                 jF_inicio.setVisible(true);
-                jF_inicio.setTitle("JP-Saf");
+                jF_inicio.setTitle("ZINNIA");
                 jF_inicio.setLocationRelativeTo(null);
                 this.setVisible(false);
             }
@@ -86,8 +86,9 @@ public final class Sesion extends javax.swing.JFrame {
 
         jL_contraseña.setText("Contraseña:");
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Montserrat Black", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Iniciar  sesión");

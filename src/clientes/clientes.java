@@ -58,6 +58,7 @@ public class clientes extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jB_regresa_cl = new javax.swing.JButton();
         jB_regresar_ti_cl = new javax.swing.JButton();
+        jb_editar_cl = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,10 +177,10 @@ public class clientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jT_tabla_cl);
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jB_regresa_cl.setBackground(new java.awt.Color(102, 102, 255));
+        jB_regresa_cl.setBackground(new java.awt.Color(0, 0, 0));
         jB_regresa_cl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/home1.png"))); // NOI18N
         jB_regresa_cl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,10 +188,10 @@ public class clientes extends javax.swing.JFrame {
             }
         });
 
-        jB_regresar_ti_cl.setBackground(new java.awt.Color(102, 102, 255));
+        jB_regresar_ti_cl.setBackground(new java.awt.Color(0, 0, 0));
         jB_regresar_ti_cl.setFont(new java.awt.Font("Montserrat Black", 1, 24)); // NOI18N
         jB_regresar_ti_cl.setForeground(new java.awt.Color(255, 255, 255));
-        jB_regresar_ti_cl.setText("FerreProgreso");
+        jB_regresar_ti_cl.setText("ZINNIA");
         jB_regresar_ti_cl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jB_regresar_ti_clActionPerformed(evt);
@@ -216,6 +217,18 @@ public class clientes extends javax.swing.JFrame {
                 .addComponent(jB_regresa_cl, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jb_editar_cl.setText("Editar");
+        jb_editar_cl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_editar_clMouseClicked(evt);
+            }
+        });
+        jb_editar_cl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_editar_clActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -260,27 +273,26 @@ public class clientes extends javax.swing.JFrame {
                                         .addComponent(jl_direccion_cl)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jtf_direccion_cl, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jb_primero_cl)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jb_anterior_cl)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jb_siguiente_cl)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jb_ultimo_cl))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jb_guardar_cl)
-                                        .addGap(34, 34, 34)
-                                        .addComponent(jb_cancelar_cl))
-                                    .addComponent(jb_agregar_cl)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jb_primero_cl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jb_modificar_cl)
-                                .addGap(57, 57, 57)))))
+                                .addComponent(jb_anterior_cl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jb_siguiente_cl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jb_ultimo_cl))
+                            .addComponent(jb_agregar_cl)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jb_modificar_cl)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jb_editar_cl))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jb_guardar_cl)
+                                    .addGap(34, 34, 34)
+                                    .addComponent(jb_cancelar_cl))))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -327,7 +339,9 @@ public class clientes extends javax.swing.JFrame {
                             .addComponent(jb_agregar_cl)
                             .addComponent(jb_eliminar_cl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jb_modificar_cl)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jb_modificar_cl)
+                            .addComponent(jb_editar_cl))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jb_guardar_cl)
@@ -392,15 +406,15 @@ public class clientes extends javax.swing.JFrame {
 
     private void jB_regresa_clActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_regresa_clActionPerformed
         jF_inicio.setVisible(true);
-        jF_inicio.setTitle("JP-Saf");
+        jF_inicio.setTitle("ZINNIA");
         jF_inicio.setLocationRelativeTo(null);
         this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jB_regresa_clActionPerformed
-
+    
     private void jB_regresar_ti_clActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_regresar_ti_clActionPerformed
         jF_inicio.setVisible(true);
-        jF_inicio.setTitle("JP-Saf");
+        jF_inicio.setTitle("ZINNIA");
         jF_inicio.setLocationRelativeTo(null);
         this.setVisible(false);
         // TODO add your handling code here:
@@ -410,6 +424,16 @@ public class clientes extends javax.swing.JFrame {
         this.localiza();
         // TODO add your handling code here:
     }//GEN-LAST:event_jT_tabla_clMouseClicked
+
+    private void jb_editar_clActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_editar_clActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_editar_clActionPerformed
+
+    private void jb_editar_clMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_editar_clMouseClicked
+        editarRegistro();
+    }//GEN-LAST:event_jb_editar_clMouseClicked
+    
+    
     private void localiza(){
         try {             
         int seleccion = jT_tabla_cl.getSelectedRow();
@@ -444,6 +468,9 @@ public class clientes extends javax.swing.JFrame {
                 this.jtf_correo_cl.setText(rs.getString("correo")); 
                 if(rs.isFirst()==false) {                 
                 rs.first(); }
+                this.deshabilitarjtables();
+                this.deshabilitarbuttons();
+                this.habilitar();
         }catch(SQLException err){ 
             JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
         } 
@@ -523,6 +550,8 @@ public class clientes extends javax.swing.JFrame {
             jtf_direccion_cl.setText("");
             jtf_telefono_cl.setText("");
             jtf_correo_cl.setText("");
+            this.habilitarjtables();
+            this.deshabilitarbuttons();
         }    
     
     
@@ -539,15 +568,30 @@ public class clientes extends javax.swing.JFrame {
       
             st.executeUpdate("Insert into cliente (id_cliente,nombre,apellidos,rfc,direccion,telefono,correo)"+"values('"+ id_cliente+"','"+nombre+"','"+apellidos+"','"+rfc+"','"+direccion+"','"+telefono+"','"+correo+"');"); 
             this.Conectar();
+            this.deshabilitarjtables();
+            this.deshabilitarbuttons();
+            this.habilitar();
             this.primerRegistro();
 
         } catch(SQLException err)         { 
             JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 
-        } 
-
+        }
+            
+        }
+         
+    public void editarRegistro(){
+            Conectar();               
+            this.habilitarjtables();
+            this.habilitarbuttons();
+            jb_guardar_cl.setEnabled(false);            
+            jb_editar_cl.setEnabled(false);
+            jb_agregar_cl.setEnabled(false);
     }    
     private void cancelarRegistro(){
            Conectar();
+           this.deshabilitarjtables();
+           this.deshabilitarbuttons();
+           this.habilitar();
            this.primerRegistro();
     }
     
@@ -556,6 +600,9 @@ public class clientes extends javax.swing.JFrame {
             String id_cliente=this.jtf_id_cliente_cl.getText(); 
            st.executeUpdate("delete from cliente where id_cliente='"+ id_cliente+"';");
            Conectar();
+           this.deshabilitarjtables();
+           this.deshabilitarbuttons();
+           this.habilitar();
            this.primerRegistro();
 
        } catch(SQLException err){ 
@@ -576,12 +623,66 @@ public class clientes extends javax.swing.JFrame {
             
            st.executeUpdate("update cliente set nombre='"+nombre+"', apellidos='"+apellidos+"', rfc='"+rfc+"',direccion='"+direccion+"',telefono='"+telefono+"',correo='"+correo+"' where id_cliente='"+id_cliente+"';");
            this.Conectar();
+           this.deshabilitarjtables();
+           this.deshabilitarbuttons();
+           this.habilitar();
            this.primerRegistro();
 
        } catch(SQLException err){ 
             JOptionPane.showMessageDialog(null,"Error "+err.getMessage());
         }
         
+    }
+       
+       private void deshabilitarjtables(){
+        
+        jtf_id_cliente_cl.setEnabled(false);
+        jtf_nombre_cl.setEnabled(false);
+        jtf_apellidos_cl.setEnabled(false);
+        jtf_rfc_cl.setEnabled(false);
+        jtf_direccion_cl.setEnabled(false);
+        jtf_telefono_cl.setEnabled(false);
+        jtf_correo_cl.setEnabled(false);
+}
+    private void habilitarjtables(){
+        jtf_id_cliente_cl.setEnabled(true);
+        jtf_nombre_cl.setEnabled(true);
+        jtf_apellidos_cl.setEnabled(true);
+        jtf_rfc_cl.setEnabled(true);
+        jtf_direccion_cl.setEnabled(true);
+        jtf_telefono_cl.setEnabled(true);
+        jtf_correo_cl.setEnabled(true);
+        
+}
+    private void habilitarbuttons(){
+        jb_primero_cl.setEnabled(true);
+        jb_siguiente_cl.setEnabled(true);
+        jb_anterior_cl.setEnabled(true);
+        jb_ultimo_cl.setEnabled(true);
+        jb_cancelar_cl.setEnabled(true);
+        jb_guardar_cl.setEnabled(true);
+        jb_eliminar_cl.setEnabled(true);
+        jb_modificar_cl.setEnabled(true);
+        jb_agregar_cl.setEnabled(true);
+}   
+    private void deshabilitarbuttons(){
+        jb_primero_cl.setEnabled(false);
+        jb_siguiente_cl.setEnabled(false);
+        jb_anterior_cl.setEnabled(false);
+        jb_ultimo_cl.setEnabled(false);
+        jb_cancelar_cl.setEnabled(false);
+        jb_guardar_cl.setEnabled(false);
+        jb_eliminar_cl.setEnabled(false);
+        jb_modificar_cl.setEnabled(false);
+        jb_agregar_cl.setEnabled(false);
+}
+    private void habilitar(){
+        jb_primero_cl.setEnabled(true);
+        jb_siguiente_cl.setEnabled(true);
+        jb_anterior_cl.setEnabled(true);
+        jb_ultimo_cl.setEnabled(true);
+        jb_agregar_cl.setEnabled(true);
+        jb_modificar_cl.setEnabled(true);
     }
     
     /**
@@ -630,6 +731,7 @@ public class clientes extends javax.swing.JFrame {
     private javax.swing.JButton jb_agregar_cl;
     private javax.swing.JButton jb_anterior_cl;
     private javax.swing.JButton jb_cancelar_cl;
+    private javax.swing.JButton jb_editar_cl;
     private javax.swing.JButton jb_eliminar_cl;
     private javax.swing.JButton jb_guardar_cl;
     private javax.swing.JButton jb_modificar_cl;
